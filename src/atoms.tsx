@@ -3,7 +3,7 @@ import {atom, selector} from "recoil";
 
 
 
-export const categoryState = atom<any>({
-    key: "category",
+export const userName = atom<string>({
+    key: "userName",
     default: ""
 })

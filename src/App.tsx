@@ -1,11 +1,13 @@
-import React from 'react';
-import Router from "./Router";
+import React, {useEffect} from 'react';
+import Router from "./routes/router";
 
 
 function App() {
-  return (
-      <Router/>
-  )
+
+
+    return (
+        <Router/>
+    )
 }
 
 export default App;

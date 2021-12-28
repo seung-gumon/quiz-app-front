@@ -15,9 +15,11 @@ const QuizStartPresenter: React.FC<IQuizStartPresenter> =
          gameStart
      }) => {
         return (
-            <main className={'w-full pb-14 lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
-                <section className={'p-10 w-10/12 md:w-3/6 lg:w-2/6 bg-white rounded-lg'}  style={{maxWidth:'500px'}}>
-                    <label htmlFor="userName" className="block mb-2 text-sm md:text-lg font-bold">게임에 참여하는 분의 성함을 적어주세요 !️</label>
+            <main
+                className={'animate-fade-in-up w-full pb-14 lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
+                <section className={'p-10 w-10/12 md:w-3/6 lg:w-2/6 bg-white rounded-lg'} style={{maxWidth: '500px'}}>
+                    <label htmlFor="userName" className="block mb-2 text-sm md:text-lg font-bold">퀴즈에 참여하는 분의 성함을 적어주세요
+                        !️</label>
                     <input type="text" id="userName"
                            value={name || ''}
                            onChange={(event: React.FormEvent<HTMLInputElement>) => setName(event.currentTarget.value)}
@@ -26,7 +28,7 @@ const QuizStartPresenter: React.FC<IQuizStartPresenter> =
                     <button
                         onClick={gameStart}
                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-full mt-3">
-                        게임 시작하기 !
+                        퀴즈 풀기 !
                     </button>
                 </section>
             </main>

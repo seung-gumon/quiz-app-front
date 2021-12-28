@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {useRecoilState} from "recoil";
-import {IQuizApi, quizApi} from "../../atoms";
+import {useRecoilState, useSetRecoilState} from "recoil";
+import {IQuizApi, quizApi, wrongQuiz, correctQuiz} from "../../atoms";
 import axios from "axios";
 import QuizStartContainer from "./quizStart/quizStartContainer";
 import Quiz from "../../components/Quiz";
@@ -9,10 +9,13 @@ import Quiz from "../../components/Quiz";
 const QuizContainer = () => {
 
     const [userName, setUserName] = useState<string>('');
-    const [gameStart, setGameStart] = useState<boolean>(false);
-    const [gameSeq, setGameSeq] = useState<number>(0);
+    const [quizStart, setQuizStart] = useState<boolean>(false);
+    const [quizSeq, setQuizSeq] = useState<number>(0);
+
 
     const [quizDataArray, setQuizDataArray] = useRecoilState<IQuizApi[]>(quizApi);
+    const setCorrectQuizArray = useSetRecoilState<IQuizApi[]>(wrongQuiz);
+    const setWrongQuizArray = useSetRecoilState<IQuizApi[]>(wrongQuiz);
 
 
     useEffect(() => {
@@ -28,12 +31,30 @@ const QuizContainer = () => {
     }, [])
 
 
-    if (!gameStart) {
+    const parsingHtmlEntity = (question: string) => {
+        const textAreaElement = document.createElement("textarea");
+        textAreaElement.innerHTML = question
+        return textAreaElement.value;
+    }
+
+
+    const chooseAnswer = (selectAnswer: string) => {
+        const answer = quizDataArray[quizSeq].correct_answer === selectAnswer;
+        if (answer) {
+            setWrongQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
+        } else {
+            setCorrectQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
+        }
+        // return setQuizSeq((prev) => prev + 1);
+    }
+
+
+    if (!quizStart) {
         return (
             <QuizStartContainer
                 userName={userName}
                 setUserName={setUserName}
-                setGameStart={setGameStart}
+                setQuizStart={setQuizStart}
             />
         )
     }
@@ -41,9 +62,15 @@ const QuizContainer = () => {
     return (
         <main>
             {quizDataArray.map((quiz, index) => {
-                if (index === gameSeq) {
+                if (index === quizSeq) {
                     return (
-                        <Quiz quiz={quiz} seq={index}/>
+                        <Quiz
+                            key={index}
+                            quiz={quiz}
+                            seq={index}
+                            parsingHtmlEntity={parsingHtmlEntity}
+                            chooseAnswer={chooseAnswer}
+                        />
                     )
                 }
             })}

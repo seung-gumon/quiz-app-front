@@ -5,14 +5,14 @@ import QuizStartPresenter from "./quizStartPresenter";
 interface IQuizStartContainer {
     userName: string
     setUserName: Dispatch<SetStateAction<string>>
-    setGameStart: Dispatch<SetStateAction<boolean>>
+    setQuizStart: Dispatch<SetStateAction<boolean>>
 }
 
 const QuizStartContainer: React.FC<IQuizStartContainer> =
     ({
          userName,
          setUserName,
-         setGameStart,
+         setQuizStart,
      }) => {
 
 
@@ -21,7 +21,7 @@ const QuizStartContainer: React.FC<IQuizStartContainer> =
                 setUserName("");
                 return alert("이름을 한글자 이상 적어주세요!");
             }
-            setGameStart(true);
+            setQuizStart(true);
         }
 
         return (

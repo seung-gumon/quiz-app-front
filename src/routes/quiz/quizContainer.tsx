@@ -43,7 +43,7 @@ const QuizContainer = () => {
             {quizDataArray.map((quiz, index) => {
                 if (index === gameSeq) {
                     return (
-                        <Quiz quiz={quiz}/>
+                        <Quiz quiz={quiz} seq={index}/>
                     )
                 }
             })}

@@ -38,14 +38,15 @@ const QuizContainer = () => {
     }
 
 
-    const chooseAnswer = (selectAnswer: string) => {
+    const chooseAnswer = (selectAnswer: string , close : Function) => {
         const answer = quizDataArray[quizSeq].correct_answer === selectAnswer;
         if (answer) {
             setWrongQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
         } else {
             setCorrectQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
         }
-        // return setQuizSeq((prev) => prev + 1);
+        setQuizSeq((prev) => prev + 1);
+        return close()
     }
 
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import {IQuizApi} from "../atoms";
 import {motion} from "framer-motion"
+import Popup from 'reactjs-popup';
 
 interface IQuiz {
     quiz: IQuizApi
     seq: number
     parsingHtmlEntity: (HTMLEntity: string) => string;
-    chooseAnswer : (answer : string) => void;
+    chooseAnswer: (answer: string , close : Function) => void;
 }
 
 const Quiz: React.FC<IQuiz> =
@@ -17,6 +18,7 @@ const Quiz: React.FC<IQuiz> =
          chooseAnswer
      }) => {
         return (
+
             <section
                 className={'animate-fade-in-up w-full pb-14 lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
                 <article className={'p-6 pt-0 w-10/12 md:w-3/6 lg:w-3/6 bg-white rounded-lg'}>
@@ -24,17 +26,24 @@ const Quiz: React.FC<IQuiz> =
                     <h4 className={'py-6 pt-0 font-bold text-lg'}>{parsingHtmlEntity(quiz.question)}</h4>
                     <div className={'grid grid-cols-1 gap-3 md:grid-cols-2 w-full rounded-lg '}
                          style={{maxWidth: '850px'}}>
-                        {[...quiz.incorrect_answers, quiz.correct_answer].sort(() => Math.random() - 0.5).map((select,selectIndex) => {
+                        {[...quiz.incorrect_answers, quiz.correct_answer].sort(() => Math.random() - 0.5).map((select, selectIndex) => {
                             return (
-                                <motion.div
-                                    key={selectIndex}
-                                    onClick={() => chooseAnswer(select)}
-                                    className={'w-full font-bold text-white animate-fade-in-up bg-sky-400 rounded-lg p-5 text-base lg:text-xl'}
-                                    whileTap={{scale: 0.9}}
-                                >
-                                    {select}
-                                </motion.div>
-
+                                <Popup
+                                    trigger={
+                                        <motion.div
+                                            key={selectIndex}
+                                            className={'modal w-full font-bold text-white animate-fade-in-up bg-sky-400 rounded-lg p-5 text-base lg:text-xl'}
+                                            whileTap={{scale: 0.9}}
+                                        >
+                                            {select}
+                                        </motion.div>
+                                    }
+                                    modal
+                                    nested
+                                >{(close : any) => (
+                                    <button onClick={() => chooseAnswer(select , close)}>닫 기</button>
+                                )}
+                                </Popup>
                             )
                         })}
                     </div>

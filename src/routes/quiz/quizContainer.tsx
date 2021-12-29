@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {IQuizApi, quizApi, wrongQuiz, correctQuiz} from "../../atoms";
+import {DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../atoms";
 import axios from "axios";
 import QuizStartContainer from "./quizStart/quizStartContainer";
 import Quiz from "../../components/Quiz";
@@ -37,9 +37,26 @@ const QuizContainer = () => {
         return textAreaElement.value;
     }
 
+    const grade = (selectAnswer: string): boolean => {
+        return quizDataArray[quizSeq].correct_answer === selectAnswer;
+    }
 
-    const chooseAnswer = (selectAnswer: string , close : Function) => {
-        const answer = quizDataArray[quizSeq].correct_answer === selectAnswer;
+
+    const transformDifficulty = (difficulty : DIFFICULTY) => {
+        switch (difficulty) {
+            case DIFFICULTY.EASY :
+                return "쉬움"
+            case DIFFICULTY.MEDIUM :
+                return "중간"
+            case DIFFICULTY.HARD :
+                return "어려움"
+        }
+    }
+
+
+
+    const goToNextQuiz = (selectAnswer: string, close: Function) => {
+        const answer = grade(selectAnswer);
         if (answer) {
             setWrongQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
         } else {
@@ -66,11 +83,13 @@ const QuizContainer = () => {
                 if (index === quizSeq) {
                     return (
                         <Quiz
+                            grade={grade}
                             key={index}
                             quiz={quiz}
                             seq={index}
                             parsingHtmlEntity={parsingHtmlEntity}
-                            chooseAnswer={chooseAnswer}
+                            goToNextQuiz={goToNextQuiz}
+                            transformDifficulty={transformDifficulty}
                         />
                     )
                 }

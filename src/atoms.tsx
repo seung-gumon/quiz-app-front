@@ -1,10 +1,16 @@
 import {atom} from "recoil";
 
+export enum DIFFICULTY {
+    "EASY"="easy",
+    "MEDIUM"="medium",
+    "HARD"="hard"
+}
+
 
 export interface IQuizApi {
     category: string;
     correct_answer: string;
-    difficulty: string;
+    difficulty: DIFFICULTY;
     incorrect_answers: string[],
     question: string,
     type: string

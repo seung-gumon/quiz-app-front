@@ -26,16 +26,18 @@ const QuizPresenter: React.FC<IQuiz> =
      }) => {
 
 
-
         return (
 
             <section
                 className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
                 <article className={'p-6 pt-0 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg'}>
-                    <div className="w-full bg-gray-200 rounded-full my-5">
-                        <div className="bg-sky-400 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full" style={{width: `${(seq+1)/10*100}%`}}>{(seq+1)/10*100}%</div>
-                    </div>
 
+                    <div className="w-full bg-gray-200 rounded-full my-5">
+                        <div
+                            className="bg-sky-400 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full"
+                            style={{width: `${(seq + 1) / 10 * 100}%`}}>{(seq + 1) / 10 * 100}%
+                        </div>
+                    </div>
 
                     <div className={'flex items-center w-full justify-between my-2'}>
                         <h4 className={'font-bold text-2xl'}>문제 {seq + 1}</h4>
@@ -58,7 +60,7 @@ const QuizPresenter: React.FC<IQuiz> =
                                         <motion.li
                                             className={'cursor-pointer hover:bg-sky-700 w-full font-bold text-white animate-fade-in-up bg-sky-400 rounded-lg p-5 text-base lg:text-xl'}
                                             whileTap={{scale: 0.9}}
-                                            whileHover={{scale : 1.07}}
+                                            whileHover={{scale: 1.07}}
                                         >
                                             {select}
                                         </motion.li>
@@ -69,7 +71,7 @@ const QuizPresenter: React.FC<IQuiz> =
                                             background: '#292D3E',
                                             borderRadius: '0.5rem',
                                             border: 'none',
-                                            padding : '20px 0'
+                                            padding: '20px 0'
                                         },
                                     }}
                                     modal
@@ -80,12 +82,13 @@ const QuizPresenter: React.FC<IQuiz> =
                                             {grade(select) ?
                                                 <>
                                                     <div className={'w-7/12 mx-auto'}>
-                                                        <img className={'w-full animate-fade-in-up '} src={'/correct.png'} alt={"correctPNG"}/>
+                                                        <img className={'w-full animate-fade-in-up '}
+                                                             src={'/correct.png'} alt={"correctPNG"}/>
                                                     </div>
                                                     <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>
                                                         {quizLength === seq + 1 ?
                                                             "문제를 다 푸셨어요! 너무 수고하셨고 결과를 확인해주세요 ! 😊"
-                                                             :
+                                                            :
                                                             "👏🏻 오!! 정답이에요 ! 👏🏻 \n 남은 문제도 정답을 향해 가즈아!!"
                                                         }
                                                     </p>
@@ -94,7 +97,8 @@ const QuizPresenter: React.FC<IQuiz> =
                                                 :
                                                 <>
                                                     <div className={'w-7/12 mx-auto'}>
-                                                        <img className={'w-full animate-fade-in-up'} src={'/wrong.png'} alt={"correctPNG"}/>
+                                                        <img className={'w-full animate-fade-in-up'} src={'/wrong.png'}
+                                                             alt={"correctPNG"}/>
                                                     </div>
                                                     <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>
                                                         {quizLength === seq + 1 ?
@@ -109,7 +113,9 @@ const QuizPresenter: React.FC<IQuiz> =
                                         </div>
 
                                         <div className={'w-full flex items-center justify-center'}>
-                                            <button className={'bg-blue-600 hover:bg-blue-700 text-gray-200 font-bold p-3 py-1.5 rounded-lg'} onClick={() => goToNextQuiz(select, close)}>
+                                            <button
+                                                className={'bg-blue-600 hover:bg-blue-700 text-gray-200 font-bold p-3 py-1.5 rounded-lg'}
+                                                onClick={() => goToNextQuiz(select, close)}>
                                                 {quizLength === seq + 1 ? "결과 확인하기 !" : "다음 문제 풀기!"}
                                             </button>
                                         </div>

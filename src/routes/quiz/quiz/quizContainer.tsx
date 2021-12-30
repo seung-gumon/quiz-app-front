@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../atoms";
+import {DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../../atoms";
 import axios from "axios";
-import QuizStartContainer from "./quizStart/quizStartContainer";
+import QuizStartContainer from "../quizStart/quizStartContainer";
 import QuizPresenter from "./quizPresenter";
 
 
@@ -42,7 +42,7 @@ const QuizContainer = () => {
     }
 
 
-    const transformDifficulty = (difficulty : DIFFICULTY) => {
+    const transformDifficulty = (difficulty: DIFFICULTY) => {
         switch (difficulty) {
             case DIFFICULTY.EASY :
                 return "쉬움"
@@ -52,7 +52,6 @@ const QuizContainer = () => {
                 return "어려움"
         }
     }
-
 
 
     const goToNextQuiz = (selectAnswer: string, close: Function) => {
@@ -76,6 +75,14 @@ const QuizContainer = () => {
             />
         )
     }
+
+
+    if (quizDataArray.length === quizSeq) {
+        return (
+            <span>result</span>
+        )
+    }
+
 
     return (
         <main>

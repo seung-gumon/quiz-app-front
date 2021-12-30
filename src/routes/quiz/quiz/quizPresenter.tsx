@@ -1,5 +1,5 @@
 import React from 'react';
-import {DIFFICULTY, IQuizApi} from "../../atoms";
+import {DIFFICULTY, IQuizApi} from "../../../atoms";
 import {motion} from "framer-motion"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';

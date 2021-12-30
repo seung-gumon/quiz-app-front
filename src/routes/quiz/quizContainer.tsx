@@ -3,7 +3,7 @@ import {useRecoilState, useSetRecoilState} from "recoil";
 import {DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../atoms";
 import axios from "axios";
 import QuizStartContainer from "./quizStart/quizStartContainer";
-import Quiz from "../../components/Quiz";
+import QuizPresenter from "./quizPresenter";
 
 
 const QuizContainer = () => {
@@ -82,7 +82,7 @@ const QuizContainer = () => {
             {quizDataArray.map((quiz, index) => {
                 if (index === quizSeq) {
                     return (
-                        <Quiz
+                        <QuizPresenter
                             grade={grade}
                             key={index}
                             quiz={quiz}

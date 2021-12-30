@@ -87,6 +87,7 @@ const QuizContainer = () => {
                             key={index}
                             quiz={quiz}
                             seq={index}
+                            quizLength={quizDataArray.length}
                             parsingHtmlEntity={parsingHtmlEntity}
                             goToNextQuiz={goToNextQuiz}
                             transformDifficulty={transformDifficulty}

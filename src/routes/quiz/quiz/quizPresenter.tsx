@@ -32,6 +32,11 @@ const QuizPresenter: React.FC<IQuiz> =
             <section
                 className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
                 <article className={'p-6 pt-0 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg'}>
+                    <div className="w-full bg-gray-200 rounded-full my-5">
+                        <div className="bg-sky-400 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full" style={{width: `${(seq+1)/10*100}%`}}>{(seq+1)/10*100}%</div>
+                    </div>
+
+
                     <div className={'flex items-center w-full justify-between my-2'}>
                         <h4 className={'font-bold text-2xl'}>문제 {seq + 1}</h4>
                         <h4 className={'font-bold ml-6 text-lg flex items-center justify-center'}>난이도 : <span
@@ -51,8 +56,9 @@ const QuizPresenter: React.FC<IQuiz> =
                                     closeOnEscape={false}
                                     trigger={
                                         <motion.li
-                                            className={'modal w-full font-bold text-white animate-fade-in-up bg-sky-400 rounded-lg p-5 text-base lg:text-xl'}
+                                            className={'cursor-pointer hover:bg-sky-700 w-full font-bold text-white animate-fade-in-up bg-sky-400 rounded-lg p-5 text-base lg:text-xl'}
                                             whileTap={{scale: 0.9}}
+                                            whileHover={{scale : 1.07}}
                                         >
                                             {select}
                                         </motion.li>

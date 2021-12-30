@@ -4,6 +4,7 @@ import {DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../../atoms";
 import axios from "axios";
 import QuizStartContainer from "../quizStart/quizStartContainer";
 import QuizPresenter from "./quizPresenter";
+import QuizResultContainer from "../quizResult/quizResultContainer";
 
 
 const QuizContainer = () => {
@@ -79,7 +80,7 @@ const QuizContainer = () => {
 
     if (quizDataArray.length === quizSeq) {
         return (
-            <span>result</span>
+            <QuizResultContainer/>
         )
     }
 

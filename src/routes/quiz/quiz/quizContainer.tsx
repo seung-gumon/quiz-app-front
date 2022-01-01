@@ -1,21 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../../atoms";
+import {correctQuiz, DIFFICULTY, IQuizApi, quizApi, wrongQuiz, userName} from "../../../atoms";
 import axios from "axios";
 import QuizStartContainer from "../quizStart/quizStartContainer";
 import QuizPresenter from "./quizPresenter";
 import QuizResultContainer from "../quizResult/quizResultContainer";
 
 
+
+
+
 const QuizContainer = () => {
 
-    const [userName, setUserName] = useState<string>('');
+
     const [quizStart, setQuizStart] = useState<boolean>(false);
     const [quizSeq, setQuizSeq] = useState<number>(0);
 
 
+
+
     const [quizDataArray, setQuizDataArray] = useRecoilState<IQuizApi[]>(quizApi);
-    const setCorrectQuizArray = useSetRecoilState<IQuizApi[]>(wrongQuiz);
+    const setCorrectQuizArray = useSetRecoilState<IQuizApi[]>(correctQuiz);
     const setWrongQuizArray = useSetRecoilState<IQuizApi[]>(wrongQuiz);
 
 
@@ -67,11 +72,11 @@ const QuizContainer = () => {
     }
 
 
+
+
     if (!quizStart) {
         return (
             <QuizStartContainer
-                userName={userName}
-                setUserName={setUserName}
                 setQuizStart={setQuizStart}
             />
         )
@@ -85,24 +90,31 @@ const QuizContainer = () => {
     }
 
 
+
     return (
         <main>
-            {quizDataArray.map((quiz, index) => {
-                if (index === quizSeq) {
-                    return (
-                        <QuizPresenter
-                            grade={grade}
-                            key={index}
-                            quiz={quiz}
-                            seq={index}
-                            quizLength={quizDataArray.length}
-                            parsingHtmlEntity={parsingHtmlEntity}
-                            goToNextQuiz={goToNextQuiz}
-                            transformDifficulty={transformDifficulty}
-                        />
-                    )
-                }
-            })}
+            <section
+                className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
+                <article className={'p-6 pt-0 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg'}>
+                    {quizDataArray.map((quiz, index) => {
+                        if (index === quizSeq) {
+                            return (
+                                <QuizPresenter
+                                    grade={grade}
+                                    key={index}
+                                    quiz={quiz}
+                                    seq={index}
+                                    quizLength={quizDataArray.length}
+                                    parsingHtmlEntity={parsingHtmlEntity}
+                                    goToNextQuiz={goToNextQuiz}
+                                    transformDifficulty={transformDifficulty}
+                                />
+                            )
+                        }
+                    })}
+                </article>
+            </section>
+
         </main>
     )
 

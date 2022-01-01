@@ -38,4 +38,9 @@ export const wrongQuiz = atom<IQuizApi[]>({
     default: []
 })
 
+export const startTime = atom<number>({
+    key : "startTime",
+    default : 0,
+})
+
 

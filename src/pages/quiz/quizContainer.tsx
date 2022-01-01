@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {correctQuiz, DIFFICULTY, IQuizApi, quizApi, wrongQuiz, userName} from "../../atoms";
+import {correctQuiz, DIFFICULTY, IQuizApi, quizApi, wrongQuiz} from "../../atoms";
 import axios from "axios";
 import QuizStartContainer from "../quizStart/quizStartContainer";
 import QuizPresenter from "./quizPresenter";

@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React from 'react';
 import QuizResultPresenter from "./QuizResultPresenter";
 import {useRecoilValue} from "recoil";
 import {correctQuiz, IQuizApi, wrongQuiz, userName , startTime} from "../../atoms";

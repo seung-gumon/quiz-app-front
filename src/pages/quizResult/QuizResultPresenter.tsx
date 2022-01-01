@@ -1,6 +1,6 @@
 import React from 'react';
 import ApexChart from "react-apexcharts";
-import {IQuizApi} from "../../../atoms";
+import {IQuizApi} from "../../atoms";
 
 interface IQuizResultPresenter {
     correctArr: IQuizApi[]

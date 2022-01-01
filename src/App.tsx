@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import Router from "./routes/router";
+import Router from "./pages/router";
 
 
 function App() {

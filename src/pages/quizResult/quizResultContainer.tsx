@@ -1,7 +1,7 @@
 import React, {Dispatch, SetStateAction} from 'react';
 import QuizResultPresenter from "./QuizResultPresenter";
 import {useRecoilValue} from "recoil";
-import {correctQuiz, IQuizApi, wrongQuiz, userName , startTime} from "../../../atoms";
+import {correctQuiz, IQuizApi, wrongQuiz, userName , startTime} from "../../atoms";
 
 
 

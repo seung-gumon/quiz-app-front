@@ -1,7 +1,7 @@
 import React, {Dispatch, SetStateAction} from 'react';
 import QuizStartPresenter from "./quizStartPresenter";
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {startTime, userName} from "../../../atoms";
+import {startTime, userName} from "../../atoms";
 
 
 interface IQuizStartContainer {

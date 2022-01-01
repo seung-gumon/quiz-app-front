@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizResultPresenter from "./QuizResultPresenter";
+import QuizResultPresenter from "./quizResultPresenter";
 import {useRecoilValue} from "recoil";
 import {correctQuiz, IQuizApi, wrongQuiz, userName , startTime} from "../../atoms";
 

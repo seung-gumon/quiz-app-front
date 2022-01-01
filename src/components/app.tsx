@@ -1,10 +1,8 @@
 import React from 'react';
-import Router from "./pages/router";
+import Router from "../pages/router";
 
 
 function App() {
-
-
     return (
         <Router/>
     )

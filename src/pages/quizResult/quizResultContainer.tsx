@@ -7,6 +7,7 @@ import {correctQuiz, IQuizApi, wrongQuiz, userName , startTime} from "../../atom
 
 
 
+
 const QuizResultContainer = () => {
 
     const correctArr = useRecoilValue<IQuizApi[]>(correctQuiz);

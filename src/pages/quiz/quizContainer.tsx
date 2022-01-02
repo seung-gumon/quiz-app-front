@@ -66,9 +66,9 @@ const QuizContainer = () => {
     const goToNextQuiz = (selectAnswer: string, close: Function) => {
         const answer = grade(selectAnswer);
         if (answer) {
-            setWrongQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
-        } else {
             setCorrectQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
+        } else {
+            setWrongQuizArray((prev) => [...prev, quizDataArray[quizSeq]])
         }
         setQuizSeq((prev) => prev + 1);
         return close()

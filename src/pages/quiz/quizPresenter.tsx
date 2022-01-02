@@ -47,7 +47,7 @@ const QuizPresenter: React.FC<IQuizPresenter> =
                     {[...quiz.incorrect_answers, quiz.correct_answer].sort(() => Math.random() - 0.5).map((select, selectIndex) => {
                         return (
                             <QuizText selectIndex={selectIndex} select={select} seq={seq} goToNextQuiz={goToNextQuiz}
-                                      grade={grade} quizLength={quizLength}/>
+                                      grade={grade} quizLength={quizLength} key={selectIndex}/>
                         )
                     })}
                 </ul>

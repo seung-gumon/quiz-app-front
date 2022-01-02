@@ -33,7 +33,7 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
                                     (new Date().getTime() - oldTime)/1000/60 < 1 ?
                                         `우와! 총 ${correctArr.length + wrongArr.length} 문제를 ${((new Date().getTime() - oldTime)/1000).toFixed()}초만에 해결하였습니다! !👏🏻`
                                         :
-                                        `총 ${correctArr.length + wrongArr.length} 문제를 모두 푸시는데 약 ${((new Date().getTime() - oldTime)/1000/60).toFixed()}분이 걸렸습니다! 🕰`
+                                        `총 ${correctArr.length + wrongArr.length} 문제를 모두 해결하는데 약 ${((new Date().getTime() - oldTime)/1000/60).toFixed()}분이 걸렸습니다! 🕰`
                                 }</span>
                             <ApexChart
                                 width={400}

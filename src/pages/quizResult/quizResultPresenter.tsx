@@ -81,7 +81,7 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
                                     </div>
                                 </div>
 
-                                <div onClick={() => window.location.replace("/")} className="flex flex-wrap mx-2 my-1.5 w-10/12 sm:w-6/12">
+                                <div onClick={() => window.location.replace("https://seung-gumon.github.io/quiz-app-front/")} className="flex flex-wrap mx-2 my-1.5 w-10/12 sm:w-6/12">
                                     <div className={`px-2 mb-4 w-full cursor-pointer`}>
                                         <div  className="text-grey-dark flex items-center flex-col py-2 justify-center bg-violet-300 border-b-4 border-r-4 border-violet-400 rounded-lg">
                                             <button className={'font-bold uppercase text-gray-600'}>다시 풀기</button>

@@ -44,7 +44,7 @@
 - 모든 문제를 푸는 데 까지 걸린 시간 체크
 - 그래프로 정오답 비율 구현
 
-![result](https://user-images.githubusercontent.com/64651532/147872381-130fe875-b494-421e-9a26-babd686ce195.png)
+![result](https://user-images.githubusercontent.com/64651532/147873436-f8ea6520-f5de-44dd-9cd0-b35dd2df7cbf.png)
 
 
 

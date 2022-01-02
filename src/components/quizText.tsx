@@ -50,8 +50,8 @@ const QuizText: React.FC<IQuizText> =
                     <div>
                         {grade(select) ?
                             <>
-                                <div className={'w-7/12 mx-auto'}>
-                                    <img className={'w-full animate-fade-in-up '}
+                                <div className={'w-7/12 flex items-center justify-center mx-auto'}>
+                                    <img className={'w-full animate-fade-in-up mx-auto'}
                                          src={'https://seung-gumon.github.io/quiz-app-front/correct.png'} alt={"correct png"} style={{'maxWidth':'175px'}}/>
                                 </div>
                                 <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>
@@ -65,8 +65,8 @@ const QuizText: React.FC<IQuizText> =
 
                             :
                             <>
-                                <div className={'w-7/12 mx-auto'}>
-                                    <img className={'w-full animate-fade-in-up'} src={'https://seung-gumon.github.io/quiz-app-front/wrong.png'}
+                                <div className={'w-7/12 flex items-center justify-center mx-auto'}>
+                                    <img className={'w-full animate-fade-in-up mx-auto'} src={'https://seung-gumon.github.io/quiz-app-front/wrong.png'}
                                          alt={"wrong png"} style={{'maxWidth':'175px'}}/>
                                 </div>
                                 <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>

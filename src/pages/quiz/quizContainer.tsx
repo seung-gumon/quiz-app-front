@@ -88,7 +88,9 @@ const QuizContainer = () => {
 
     if (quizDataArray.length === quizSeq) {
         return (
-            <QuizResultContainer/>
+            <QuizResultContainer
+                setQuizSeq={setQuizSeq}
+            />
         )
     }
 

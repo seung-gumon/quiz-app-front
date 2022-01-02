@@ -7,6 +7,7 @@ interface IQuizResultPresenter {
     wrongArr: IQuizApi[]
     name: string
     oldTime : number
+    unravelAgain : () => void;
 }
 
 
@@ -15,7 +16,8 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
          correctArr,
          wrongArr,
          name,
-         oldTime
+         oldTime,
+         unravelAgain
      }) => {
 
 
@@ -85,6 +87,13 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
                                     <div className={`px-2 mb-4 w-full cursor-pointer`}>
                                         <div  className="text-grey-dark flex items-center flex-col py-2 justify-center bg-violet-300 border-b-4 border-r-4 border-violet-400 rounded-lg">
                                             <button className={'font-bold uppercase text-gray-600'}>새로운 문제 풀기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div onClick={unravelAgain} className="flex flex-wrap mx-2 my-1.5 w-10/12 sm:w-6/12">
+                                    <div className={`px-2 mb-4 w-full cursor-pointer`}>
+                                        <div  className="text-grey-dark flex items-center flex-col py-2 justify-center bg-amber-300 border-b-4 border-r-4 border-amber-400 rounded-lg">
+                                            <button className={'font-bold uppercase text-gray-600'}>다시풀기</button>
                                         </div>
                                     </div>
                                 </div>

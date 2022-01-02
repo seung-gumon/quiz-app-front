@@ -27,6 +27,9 @@ const QuizContainer = () => {
     useEffect(() => {
         (async () => {
             try {
+                setQuizDataArray([])
+                setWrongQuizArray([])
+                setCorrectQuizArray([])
                 const {data: {results}} = await axios.get("https://opentdb.com/api.php?amount=10");
                 return setQuizDataArray(results)
             } catch (e) {

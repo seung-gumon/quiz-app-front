@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# 랜덤 퀴즈 ✨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📖개요
+랜덤 퀴즈 게임 입니다 !<br />
+퀴즈를 푸는 사용자의 이름을 적어주시면 바로 게임이 시작됩니다!<br />
+게임시작을 누르는 순간 타이머가 시작됩니다!🕰<br />
 
-## Available Scripts
 
-In the project directory, you can run:
+[퀴즈 풀러 가기 !](https://seung-gumon.github.io/quiz-app-front/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💻Stack
+- [X] Typescript
+- [X] React.js
+- [X] Recoil
+- [X] Tailwind Css
+- [X] gh-pages
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ⚛️ React 관련 라이브러리
+- [X] react-popup
+- [X] Framer Motion
+- [X] Axios
+- [X] ApexChart
 
-### `npm run build`
+<hr />
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💡 주요 기능
+# 반응형 웹
+### Tailwind css 를 사용하여 반응형 웹 구현
+- Mobile (IPHONE XS)
+   <br />
+   ![mobile](https://user-images.githubusercontent.com/64651532/147872243-f503d303-1c6f-41c4-8ea8-9b435a1986ad.jpg)
+- PC
+  <br />
+  ![pc](https://user-images.githubusercontent.com/64651532/147872284-2b3405c7-10c6-4de0-a602-c8f64ed17b2f.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 결과창
+- 모든 문제를 푸는 데 까지 걸린 시간 체크
+- 그래프로 정오답 비율 구현
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![result](https://user-images.githubusercontent.com/64651532/147872381-130fe875-b494-421e-9a26-babd686ce195.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## 프로젝트 회고록
+이런 프로젝트는 처음이라 사실 파일구조나 스트럭
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

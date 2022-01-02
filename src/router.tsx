@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
-import QuizContainer from "./quiz/quizContainer";
+import QuizContainer from "./pages/quiz/quizContainer";
 
 
 const Router = () => {

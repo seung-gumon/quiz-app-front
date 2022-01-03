@@ -52,7 +52,7 @@ const QuizText: React.FC<IQuizText> =
                             <>
                                 <div className={'w-7/12 flex items-center justify-center mx-auto'}>
                                     <img className={'w-full animate-fade-in-up mx-auto'}
-                                         src={'https://seung-gumon.github.io/quiz-app-front/correct.png'} alt={"correct png"} style={{'maxWidth':'175px'}}/>
+                                         src={'https://user-images.githubusercontent.com/64651532/147871345-e5dd2829-4297-4726-92e0-ac2b2c52d39f.png'} alt={"correct png"} style={{'maxWidth':'175px'}}/>
                                 </div>
                                 <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>
                                     {quizLength === seq + 1 ?
@@ -66,7 +66,7 @@ const QuizText: React.FC<IQuizText> =
                             :
                             <>
                                 <div className={'w-7/12 flex items-center justify-center mx-auto'}>
-                                    <img className={'w-full animate-fade-in-up mx-auto'} src={'https://seung-gumon.github.io/quiz-app-front/wrong.png'}
+                                    <img className={'w-full animate-fade-in-up mx-auto'} src={'https://user-images.githubusercontent.com/64651532/147871365-8a9b2320-7093-4da8-834c-8e514e3b53d1.png'}
                                          alt={"wrong png"} style={{'maxWidth':'175px'}}/>
                                 </div>
                                 <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>

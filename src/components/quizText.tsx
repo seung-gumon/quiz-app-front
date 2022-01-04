@@ -2,6 +2,7 @@ import React from 'react';
 import {IQuizPresenter} from "../pages/quiz/quizPresenter";
 import Popup from "reactjs-popup";
 import {motion} from "framer-motion";
+import PopupResult from "./popupResult";
 
 
 interface IQuizText extends Pick<IQuizPresenter, "grade" | "quizLength" | "seq" | "goToNextQuiz"> {
@@ -49,34 +50,14 @@ const QuizText: React.FC<IQuizText> =
                 <section className={'flex items-center justify-center flex-col rounded-lg '}>
                     <div>
                         {grade(select) ?
-                            <>
-                                <div className={'w-7/12 flex items-center justify-center mx-auto'}>
-                                    <img className={'w-full animate-fade-in-up mx-auto'}
-                                         src={'https://user-images.githubusercontent.com/64651532/147871345-e5dd2829-4297-4726-92e0-ac2b2c52d39f.png'} alt={"correct png"} style={{'maxWidth':'175px'}}/>
-                                </div>
-                                <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>
-                                    {quizLength === seq + 1 ?
-                                        "문제를 다 푸셨어요! 너무 수고하셨고 결과를 확인해주세요 ! 😊"
-                                        :
-                                        "👏🏻 오!! 정답이에요 ! 👏🏻 \n 남은 문제도 정답을 향해 가즈아!!"
-                                    }
-                                </p>
-                            </>
 
+                            <PopupResult quizLength={quizLength} seq={seq}
+                                         imgSrc={"https://user-images.githubusercontent.com/64651532/147871345-e5dd2829-4297-4726-92e0-ac2b2c52d39f.png"}
+                                         imgAlt={"correct png"} text={"👏🏻 오!! 정답이에요 ! 👏🏻 \n 남은 문제도 정답을 향해 가즈아!!"}/>
                             :
-                            <>
-                                <div className={'w-7/12 flex items-center justify-center mx-auto'}>
-                                    <img className={'w-full animate-fade-in-up mx-auto'} src={'https://user-images.githubusercontent.com/64651532/147871365-8a9b2320-7093-4da8-834c-8e514e3b53d1.png'}
-                                         alt={"wrong png"} style={{'maxWidth':'175px'}}/>
-                                </div>
-                                <p className={'animate-fade-in-up whitespace-pre-line text-sm md:text-base lg:text-lg text-gray-300 text-lg my-5 text-center px-10'}>
-                                    {quizLength === seq + 1 ?
-                                        "문제를 다 푸셨어요! 너무 수고하셨고 결과를 확인해주세요 ! 😊"
-                                        :
-                                        `괜찮아요! 그럴 수도 있죠 ! \n 남은 문제는 정답을 향해 도전! 👊🏻`
-                                    }
-                                </p>
-                            </>
+                            <PopupResult quizLength={quizLength} seq={seq}
+                                         imgSrc={"https://user-images.githubusercontent.com/64651532/147871365-8a9b2320-7093-4da8-834c-8e514e3b53d1.png"}
+                                         imgAlt={"wrong png"} text={`괜찮아요! 그럴 수도 있죠 ! \n 남은 문제는 정답을 향해 도전! 👊🏻`}/>
                         }
 
                     </div>

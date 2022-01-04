@@ -76,7 +76,7 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
                                     <div className="w-1/2 px-2 mb-4">
                                         <ResultAnswerTable
                                             containerClassName={'text-grey-dark flex items-center flex-col justify-center bg-rose-300 border-b-4 border-r-4 border-rose-400 rounded-lg'}
-                                            correctOrWrongLength={correctArr.length}
+                                            correctOrWrongLength={wrongArr.length}
                                             text={"오답"}
                                         />
                                     </div>

@@ -21,7 +21,7 @@ describe('<quizContainer/>', () => {
             // userEvent.type(button , "퀴즈풀기 !")
             // expect(window.alert).toHaveTextContent("이름을 한글자 이상 적어주세요!");
         })
-        debug()
+
 
 
     });

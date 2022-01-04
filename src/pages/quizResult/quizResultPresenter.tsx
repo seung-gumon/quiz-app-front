@@ -84,14 +84,14 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
 
                                 <div onClick={() => window.location.replace("https://seung-gumon.github.io/quiz-app-front/")} className="flex flex-wrap mx-2 my-1.5 w-10/12 sm:w-6/12">
                                     <RetryButton
-                                        containerClassName={"text-grey-dark flex items-center flex-col py-2 justify-center bg-violet-300 border-b-4 border-r-4 border-violet-400 rounded-lg"}
+                                        className={"text-grey-dark flex items-center flex-col py-2 justify-center bg-violet-300 border-b-4 border-r-4 border-violet-400 rounded-lg"}
                                         text={"새로운 문제 풀기"}
                                     />
                                 </div>
                                 <div onClick={unravelAgain} className="flex flex-wrap mx-2 my-1.5 w-10/12 sm:w-6/12">
                                     <div className={`px-2 m b-4 w-full cursor-pointer`}>
                                         <RetryButton
-                                            containerClassName={"text-grey-dark flex items-center flex-col py-2 justify-center bg-amber-300 border-b-4 border-r-4 border-amber-400 rounded-lg"}
+                                            className={"text-grey-dark flex items-center flex-col py-2 justify-center bg-amber-300 border-b-4 border-r-4 border-amber-400 rounded-lg"}
                                             text={"다시풀기"}
                                         />
                                     </div>

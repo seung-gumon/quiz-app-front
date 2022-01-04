@@ -19,7 +19,7 @@ describe("quizText" , () => {
 
     it("should render OK width Props" , () => {
         const {debug} = render(<QuizText selectIndex={1} select={"asdf"} seq={0} goToNextQuiz={goToNextQuiz} grade={gradeReturnTrue} quizLength={10}/>)
-        debug()
+
     })
 })
 //TODO :: POP UP 따로 컴포넌트로 빼서 검사해야할듯 ?!

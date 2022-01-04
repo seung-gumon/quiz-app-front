@@ -24,8 +24,8 @@ const QuizResultPresenter: React.FC<IQuizResultPresenter> =
         return (
             <main>
                 <section
-                    className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
-                    <article className={'p-6 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg mb-24 md:mb-0'}>
+                    className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center full-screen box-border overflow-hidden fixed'}>
+                    <article className={'p-6 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg  md:mb-0'}>
                         <div className={'flex items-center justify-center flex-col'}>
                             <span className={'w-full font-bold text-xl'}>{name}님의 결과! 👏🏻</span>
                             <span className={'w-full font-bold text-base my-4'}>

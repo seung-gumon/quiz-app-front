@@ -99,8 +99,8 @@ const QuizContainer = () => {
     return (
         <main>
             <section
-                className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center h-screen box-border overflow-hidden fixed'}>
-                <article className={'p-6 pt-0 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg mb-24 md:mb-0'}>
+                className={'animate-fade-in-up w-full lg:pb-0 flex justify-center items-center full-screen box-border overflow-hidden fixed'}>
+                <article className={'p-6 pt-0 w-10/12 md:w-5/6 lg:w-4/6 bg-white rounded-lg md:mb-0'}>
                     {quizDataArray.map((quiz, index) => {
                         if (index === quizSeq) {
                             return (
